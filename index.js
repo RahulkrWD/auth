@@ -76,6 +76,11 @@ app.post('/api/auth/login', async (req, res) => {
     }
 });
 
+app.get("/api/auth/find", async function(req, res){
+    const findUser = await User.find();
+    res.send(findUser)
+})
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
