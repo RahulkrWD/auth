@@ -1,0 +1,21 @@
+
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "index.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/auth/(.*)",
+        "dest": "index.js"
+      }
+    ],
+    "env": {
+      "MONGODB_URI": "mongodb+srv://rahulkr:rahulkr@cluster0.uu1odbb.mongodb.net/dotenv?retryWrites=true&w=majority",
+      "JWT_SECRET": "secret"
+    }
+  }
+  
