@@ -11,6 +11,9 @@ require("dotenv").config();
 
 connectDB();
 
+app.get("/", function (req, res) {
+  res.send({ message: "welcome to my app" });
+});
 const userRoutes = require("./routes/userRoutes");
 app.use("/auth", userRoutes);
 
