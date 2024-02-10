@@ -1,13 +1,14 @@
-# # render.yaml
-# services:
-#   - type: web
-#     name: backend
-#     envVars:
-#       - key: NODE_ENV
-#         value: production
-#         fromDatabase:
-#           name: mongodb+srv://rahulkr:rahulkr@cluster0.uu1odbb.mongodb.net/dotenv?retryWrites=true&w=majority
-#       - key: JWT_SECRET
-#         generate: secret
-#     buildCommand: npm install
-#     startCommand: npm start
+# render.yaml
+services:
+  - type: web
+    name: backend
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        fromDatabase:
+          name: mongodb+srv://rahulkr:rahulkr@cluster0.uu1odbb.mongodb.net/dotenv?retryWrites=true&w=majority
+      - key: JWT_SECRET
+        generate: secret
+    buildCommand: npm install
+    startCommand: npm start
